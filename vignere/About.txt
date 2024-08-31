@@ -1,0 +1,15 @@
+Ayush 2k22/co/118
+About 
+1) we take string input and key
+2) key size is matched to input string
+3) every charater a-z ,A-Z is mapped 0-25 in this program
+4) Encoding :
+   1) encrypted[i]=(original[i]+key[i])%26 , (I have taken care of cases when original[i] is upper ,lower along with key[i] is lower or upper ) if upper case 
+   is present at original[i] then encrypted string will get corresponding upper case , same for lower case
+5)decoding
+    1)decrypted[i]=(endcrypted[i]-key[i]+26)%26
+    2) same conditons for upper lower case is also present in decoding step
+
+constraints
+1)only alphabets are allowed in both key and string
+2) length of string and key is not bounded 

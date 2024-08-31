@@ -1,0 +1,41 @@
+Ayush 2k22/co/118
+8800164320
+About 
+1) 2 keys are required ,one string and one integer key i.e period
+2) it assumes a matrix 5x5,which contain 25 letter ,firstly letters are filled from keyword(string key) then remaining letter are filled
+3) Encoding : 1)each character of input string hav coordinates in keysquare matrix
+              2) these coordinates are separated in row and col array
+              3)now we take period number of elements from row , add them new vector(coordinates) , take period number of elemnts form col and add them in that coordinates vector 
+              and do this until row and col exhaust
+              4)now take pair from coordinates , treat first as row_number and second as col_number in keysquare and corresponding character in encodedmessage.
+4) decoding :1) make above coordinates vector from encoded_message,by taking its character coordinate from keysquare
+             2) separate original row_number col_number from above coordinates vector by extracting period number of elements from coordinates vector for row and same for col and repeat the process
+             until the number of element left unexplored/iterated is greater than equal to 2*period
+             3) when unexplored elements are less than 2* period then first half of them are for row and second half of them for col
+             4) find corresponding element in keysquare and add it to decoded message using above founded row and col . 
+
+
+constraints
+1) only uppercase letters are allowed for both input string and keyword.
+2) only 25 letters are allowed ,in this code I have removed J from our considreation.
+3) period should be less than equal to input string size.
+4)keyword(string key) can contain duplicate elements but should not have J in it.
+Test cases:
+1) period=7,key=SAFFRON, msg =THECATNAPPEDLAZILYINTHESUNLIGHT , encoded msg = QBRDEHMRPCABYWXLHULQRHRCHVVXIMD
+2) period=7,key=STARLIGHT, msg=NEONLIGHTSFLICKEREDINTHEBUSTLINGCITY, encoded msg=PQTIGLTIATHIMLFAEQBISTENTEUTTOGLSCTY
+3) period=5,key=EMBER, msg=TREEISGOODOUTSIDEFROMTECH ,encoded msg=PENPEQLFUWNTOYICCKBURMDPA
+4) period=8 , key=INTERSTING ,msg=WONDERHOWTOSOLVE , encoded msg=YTIKGSUFVOPVASCE
+5) period=3 , key =NULL , msg=LINKEDLISTS ,encoded msg=LLCIEILRFSY
+6) period =4 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AABOBGVHGNUBNOOVTTHUZZBOZ
+7) period =5 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AAAHUGGFHUNNLHUTTQHUZZVHU
+8)period =6 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AABBOVGGNHUBNOTOVHTZZUBOZ
+9)period =7 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AABFHUBGHNNUBOOTTZBOVZZHU
+10)period =8 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=ABCDEFGHIKLMNOPQRSTUVWXYZ
+11)period =9 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AABGFHUBOHNNTUBOVHTZZYVHU
+12)period =10 , key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AABGGBOVHUNNOTTBOVHUZZVHU
+13)period =18, key=ABCDEFGHIKLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=AABGGNNOTBOVHUBOVHTZZYVHU
+14)period =8 , key=KLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=CCIIRDLXEKKQERDLQRWWXERDZ
+15)period =9 , key=KLMNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=CCIIFXERDKKLQPRDLXRWWDLXE
+16)period =10 , key=OPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=ABGGNBIVHPNIOOUBIVHPUVAHP
+17)period =17, key=TUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=ZAFFMMNSQNUGOANUGOTTZOANU
+18)period =18, key=MNOPQRSTUVWXYZ , msg=ABCDEFGHIKLMNOPQRSTUVWXYZ ,encoded msg=ZEELLGMMSGTFNZGTFNSTYYFNZ

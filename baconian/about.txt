@@ -1,0 +1,28 @@
+ayush
+constraints 
+ i) key must be an integer k [5,32]
+ ii) input string can contain only lower case alphabets
+ iii) No restriction on length of input string
+
+Fuctioning :
+i) input : a message ,a key k (int)
+ii) logic :each charater of input string is mapped a->0,z->25 , these mapped number are converted to their binary form(of k bit ) , then 1 is repersentd
+by r ,and 0 by t and corresponding binary form is converted in string format 
+e.g b->1->00001->ttttr (k=5)
+
+
+test cases: msg->encodedmsg
+1) heyiamencoder ->ttrrrttrttrrttttrtttttttttrrttttrtttrrtrtttrttrrrttttrrttrttrtttr
+2) howthejosh-> ttrrrtrrrtrtrrtrttrrttrrrttrtttrttrtrrrtrttrtttrrr
+3)decodeit->tttrrttrtttttrttrrrttttrrttrtttrtttrttrr
+4) key =8, reverseit->tttrtttrtttttrtttttrtrtrtttttrtttttrtttrtttrttrttttttrttttttrttttttrttrr
+5) key =8, makeiteasy->ttttrrttttttttttttttrtrttttttrttttttrttttttrttrrtttttrtttttttttttttrttrttttrrttt
+6)key = 9  bullseye->ttttttttrttttrtrtttttttrtrrtttttrtrrttttrttrtttttttrttttttrrtttttttttrtt
+7) key=13 hellocoder->ttttttttttrrrttttttttttrtttttttttttrtrrtttttttttrtrrtttttttttrrrttttttttttttrttttttttttrrrttttttttttttrrttttttttttrttttttttttrtttr
+8) key=5 welcometoinvictus->rtrrtttrtttrtrrtttrttrrrttrrttttrttrttrrtrrrttrttttrrtrrtrtrtrttttttrtrttrrrtrttrttrt
+9)key=23,deepdive->tttttttttttttttttttttrrttttttttttttttttttttrttttttttttttttttttttttrtttttttttttttttttttttrrrrtttttttttttttttttttttrrtttttttttttttttttttrtttttttttttttttttttttrtrtrttttttttttttttttttttrtt
+10)key=31 ,binary->ttttttttttttttttttttttttttttttrtttttttttttttttttttttttttttrttttttttttttttttttttttttttttttrrtrtttttttttttttttttttttttttttttttttttttttttttttttttttttttttrtttrttttttttttttttttttttttttttrrttt
+12)key=28 ,takeiteasy->tttttttttttttttttttttttrttrrttttttttttttttttttttttttttttttttttttttttttttttttttttrtrttttttttttttttttttttttttttrttttttttttttttttttttttttttrttttttttttttttttttttttttttrttrrtttttttttttttttttttttttttrtttttttttttttttttttttttttttttttttttttttttttttttttttttrttrttttttttttttttttttttttttrrttt
+13)key=10 , abcdefghijklmnopqrstuvwxyz -> tttttttttttttttttttrttttttttrtttttttttrrtttttttrtttttttttrtrtttttttrrttttttttrrrttttttrtttttttttrttrttttttrtrtttttttrtrrttttttrrttttttttrrtrttttttrrrtttttttrrrrtttttrtttttttttrtttrtttttrttrttttttrttrrtttttrtrtttttttrtrtrtttttrtrrttttttrtrrrtttttrrttttttttrrttr
+
+
